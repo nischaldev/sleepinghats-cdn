@@ -1,0 +1,1 @@
+class a{params;constructor(t){this.params=t}setTitle(t){document.title=t}async getHtml(){return""}async componentDidMount(){}async mount(t){const n=await this.getHtml();t.innerHTML=n,await this.componentDidMount()}}export{a as m};
