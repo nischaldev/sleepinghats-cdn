@@ -1,8 +1,30 @@
-import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S as _,a as L,P as M,_ as z,n as T,C as I,b as v,d as b,l as W,w,e as H,i as B,T as A,f as F,r as P,g as N,h as V,j,k as D,m as q,o as O,p as $,q as K,u as R,x as Y,y as Q}from"./modal.service-5Z1xTt1s.js";import{A as J,C as U,e as G}from"./index-BpBkMfN_.js";import{A as X,N as Z}from"./navbar.component-ZvnFCMGT.js";import{y as ee}from"./mftsccs-browser-DU86KKx4.js";import"./vendor-Cs_0E_Xj.js";import"./codemirror-B3vgQINq.js";import"./eslint4b-BLWGvIOa.js";import"./prettier-ClL2wQep.js";import"./ckeditor-Cw9bcqxY.js";import"./loginModal.service-bwRk6z5V.js";function te(){document.addEventListener("keydown",function(e){e.ctrlKey&&e.altKey&&e.key==="d"?(e.preventDefault(),ie()):e.ctrlKey&&e.altKey&&e.key==="c"?(e.preventDefault(),ae()):e.ctrlKey&&e.altKey&&e.key==="r"?(e.preventDefault(),se()):e.ctrlKey&&e.altKey&&e.key==="f"&&(e.preventDefault(),oe())})}function ie(){const e=document.getElementById("designSplitViewButton"),i=new Event("click",{bubbles:!0,cancelable:!0});e&&e.dispatchEvent(i)}function ae(){const e=document.querySelector(".codeSplitViewButton"),i=new Event("click",{bubbles:!0,cancelable:!0});e&&e.dispatchEvent(i)}async function se(){await S.synchronizeWidget("Widget Synchronized")}async function oe(){if(document.getElementById("codeBlocksContainer")?.classList.contains("visible")){const i=document.getElementById("widgetButtionCodeViewWrapper"),t="fullscreen";i?.classList.contains(t)?i?.classList.remove(t):i?.classList.add(t)}}function ne(){const e=document.getElementById("tour-container");e&&e.remove()}async function le(){window.addEventListener("online",()=>y()),window.addEventListener("offline",()=>y())}const y=()=>{const e=navigator.onLine;console.log("isOnline",e),e?h.infoMessageToast("Internet is back. You are online now.",3):(E(),h.infoMessageToast("You are offline - changes will be saved locally.",3))};class de{constructor(){this.init()}init(){document.getElementById("wico_btn-toggle-rightPanel")?.addEventListener("click",t=>{this.toggleRightPanel(t)})}toggleRightPanel(i){const t=i?.target,n=document.getElementById("right-aside"),o=document.getElementById("column-right"),s=document.getElementById("midContent"),l=t?.querySelector("span");n&&(n?.classList.contains("d-none")?(n?.classList.remove("d-none"),o?.classList.add("col-md-3"),s?.classList.remove("col-md-12"),s?.classList.add("col-md-9"),l.textContent="start",t.title="Hide panel",t.classList.add("btn-togglePanel-close"),t.classList.remove("btn-togglePanel-open")):(n?.classList.add("d-none"),o?.classList.remove("col-md-3"),s?.classList.remove("col-md-9"),s?.classList.add("col-md-12"),l.textContent="keyboard_tab_rtl",t.title="Show panel",t.classList.remove("btn-togglePanel-close"),t.classList.add("btn-togglePanel-open")))}}class Ce extends C{the_params;page_id;widget_id;_sideNavbar;_tourStatus=!1;_loginStatus=!1;_pagesTSCCSService;_authService;constructor(i){super(i),this._sideNavbar=new _,L.navbar=this._sideNavbar,this.the_params=i,this.page_id=i?.["page-id"],this.widget_id=i?.["widget-id"],this._pagesTSCCSService=new M,this.setTitle("Home | Widget Conceptualizer"),window._dragService=z,this._authService=J.getInstance()}async componentDidMount(){if(this.page_id){const t=document.getElementById("midContent"),n=document.getElementById("right-aside"),o=await this._pagesTSCCSService.getPageById(Number(this.page_id));o?.error&&T();const s=o.data?.[`the_${U.PAGE_COMP_NAME}`],l={type:I.page,data:s,page_id:this.page_id},p=new v(l),u=new b(l);n.innerHTML=await u.getHtml(),t.innerHTML="",p.mount(t)}if(this.widget_id){const t=new Event("loadWidget");await W(t,Number(this.widget_id))}else w.disableWidgetButtons();this._sideNavbar.initialize(),H.renderActionHistory(),te(),await le(),await B(),new A,(await this._authService?.getLoginInfo()).isLoggedIn&&(new X,new de)}async getHtml(){F.resetWidgetTree(),P(),N();const i=await this._authService.getLoginInfo(),t=await V();if(this._tourStatus=i.tourStatus,this._loginStatus=i.isLoggedIn,i&&i.isLoggedIn){let n=function(d,a){let r;return function(...c){clearTimeout(r),r=setTimeout(()=>d.apply(this,c),a)}},o=function(){const a=document.querySelector(".screen-size-overlay");window.innerWidth<768&&!a?s():window.innerWidth>=768&&a&&document.body.removeChild(a)},s=function(){const d=document.createElement("div");d.className="screen-size-overlay";const a=document.createElement("div");a.className="screen-size-popup",a.setAttribute("role","alertdialog"),a.setAttribute("aria-labelledby","screen-size-title"),a.setAttribute("aria-describedby","screen-size-message");const r=document.createElement("div");r.className="warning-icon",r.innerHTML=`
+import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l as W,S as o,a as V,b as O,w as _,d as $,e as K,f as R,P as Y,_ as J,n as Q,C as U,g as T,h as L,i as G,j as X,T as Z,r as ee,k as te,m as ie,o as ae,p as se,q as oe,u as ne,x as re,y as le,z as de,A as ce,B as pe}from"./modal.service-BkQYd9Kn.js";import{A as me,C as ue,e as ge}from"./index-K0a9z0_s.js";import{A as he,N as ve}from"./navbar.component-kI3Lqx7m.js";import{f as be,y as we}from"./mftsccs-browser-DeTC_MD3.js";import"./vendor-Cs_0E_Xj.js";import"./codemirror-B3vgQINq.js";import"./eslint4b-BLWGvIOa.js";import"./prettier-ClL2wQep.js";import"./ckeditor-Cw9bcqxY.js";import"./loginModal.service-COGZugPd.js";function ye(){document.addEventListener("keydown",function(t){t.ctrlKey&&t.altKey&&t.key==="d"?(t.preventDefault(),fe()):t.ctrlKey&&t.altKey&&t.key==="c"?(t.preventDefault(),xe()):t.ctrlKey&&t.altKey&&t.key==="r"?(t.preventDefault(),_e()):t.ctrlKey&&t.altKey&&t.key==="f"&&(t.preventDefault(),ke())})}function fe(){const t=document.getElementById("designSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});t&&t.dispatchEvent(e)}function xe(){const t=document.querySelector(".codeSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});t&&t.dispatchEvent(e)}async function _e(){await N.synchronizeWidget("Widget Synchronized")}async function ke(){if(document.getElementById("codeBlocksContainer")?.classList.contains("visible")){const e=document.getElementById("widgetButtionCodeViewWrapper"),i="fullscreen";e?.classList.contains(i)?e?.classList.remove(i):e?.classList.add(i)}}function Ce(){const t=document.getElementById("tour-container");t&&t.remove()}async function Se(){window.addEventListener("online",()=>M()),window.addEventListener("offline",()=>M())}const M=()=>{const t=navigator.onLine;console.log("isOnline",t),t?E.infoMessageToast("Internet is back. You are online now.",3):(j(),E.infoMessageToast("You are offline - changes will be saved locally.",3))};class Ee{constructor(){this.init()}init(){document.getElementById("wico_btn-toggle-rightPanel")?.addEventListener("click",i=>{this.toggleRightPanel(i)})}toggleRightPanel(e){const i=e?.target,r=document.getElementById("right-aside"),n=document.getElementById("column-right"),l=document.getElementById("midContent"),d=i?.querySelector("span");r&&(r?.classList.contains("d-none")?(r?.classList.remove("d-none"),n?.classList.add("col-md-3"),l?.classList.remove("col-md-12"),l?.classList.add("col-md-9"),d.textContent="start",i.title="Hide panel",i.classList.add("btn-togglePanel-close"),i.classList.remove("btn-togglePanel-open")):(r?.classList.add("d-none"),n?.classList.remove("col-md-3"),l?.classList.remove("col-md-9"),l?.classList.add("col-md-12"),d.textContent="keyboard_tab_rtl",i.title="Show panel",i.classList.remove("btn-togglePanel-close"),i.classList.add("btn-togglePanel-open")))}}class Te{convertingId=0;convertedData;constructor(e){this.convertingId=e}async init(){const e=await be(Number(this.convertingId)),i=e?.boomgpt?.data_type;this.convertedData=await new Promise(async r=>{switch(i){case"full_page":const n=e?.boomgpt?.full_text,d=new DOMParser().parseFromString(n,"text/html"),p=d.body,b=await Promise.all(Array.from(p.querySelectorAll("script[src]")).map((a,g)=>({order:g,url:a.src})));Array.from(p.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const y=p.querySelectorAll("script:not([src])");let f="";y.forEach(a=>{f+=a.textContent}),Array.from(p.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const x=Array.from(d.head.querySelectorAll("link[rel='stylesheet'")).map((a,g)=>({order:g,url:a.href})),k=d.head.querySelectorAll("style");let w="";k.forEach(a=>{w+=a.textContent}),o.staticWidgetTree.html=p.innerHTML,o.staticWidgetTree.css=w,o.staticWidgetTree.library.css=x,o.staticWidgetTree.library.js=b,o.staticWidgetTree.before_render="this.render();",o.staticWidgetTree.after_render=f;break;case"all":const C=e?.boomgpt?.visual_text,s=new DOMParser().parseFromString(C,"text/html"),c=s.body,m=await Promise.all(Array.from(c.querySelectorAll("script[src]")).map((a,g)=>({order:g,url:a.src})));Array.from(c.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const h=c.querySelectorAll("script:not([src])");let v="";h.forEach(a=>{v+=a.textContent}),Array.from(c.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const z=Array.from(s.head.querySelectorAll("link[rel='stylesheet'")).map((a,g)=>({order:g,url:a.href})),A=s.head.querySelectorAll("style");let S="";A.forEach(a=>{S+=a.textContent}),o.staticWidgetTree.html=c.innerHTML,o.staticWidgetTree.css=S,o.staticWidgetTree.library.css=z,o.staticWidgetTree.library.js=m,o.staticWidgetTree.before_render="this.render();",o.staticWidgetTree.after_render=v;break;case"plain_text":const I=e?.boomgpt?.visual_text,H=new DOMParser().parseFromString(I,"text/html").body;o.staticWidgetTree.html=H.innerHTML;break;case"only_images":const D=e?.boomgpt?.images?.map(a=>`
+          <div class="cw_image-card">
+            <div class="cw_card cw_image">
+              <img src="${a.path}" alt='${a.title}' loading="lazy">
+            </div>
+          </div>
+          `).join("");o.staticWidgetTree.html=D,o.staticWidgetTree.css=`
+          .cw_image-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+          .cw_image-card .cw_card {
+            height: 100%;
+          }
+          .cw_image-card .cw_image {
+            padding: 20px;
+          }
+          .cw_image-card .cw_image img {
+           max-width: 100%;
+          }
+        `;break;case"sticky_note":const B=e?.boomgpt?.sticky_note,F=new DOMParser().parseFromString(B,"text/html").body;o.staticWidgetTree.html=F.innerHTML;break;case"widget":const P=new Event("loadWidget");await W(P,Number(e?.boomgpt?.widget_id));break}i!=="widget"&&(await V(o.staticWidgetTree),await O(o.staticWidgetTree,!1),_.enableWidgetButtons(),await $()),r("converted")}),console.log("convertedData --->",this.convertedData)}}class $e extends q{the_params;page_id;widget_id;_sideNavbar;_tourStatus=!1;_loginStatus=!1;_pagesTSCCSService;_authService;ctowData;constructor(e){super(e),this._sideNavbar=new K,R.navbar=this._sideNavbar,this.the_params=e,this.ctowData=e?.ctow,this.page_id=e?.["page-id"],this.widget_id=e?.["widget-id"],this._pagesTSCCSService=new Y,this.setTitle("Home | Widget Conceptualizer"),window._dragService=J,this._authService=me.getInstance()}async componentDidMount(){if(this.page_id){const i=document.getElementById("midContent"),r=document.getElementById("right-aside"),n=await this._pagesTSCCSService.getPageById(Number(this.page_id));n?.error&&Q();const l=n.data?.[`the_${ue.PAGE_COMP_NAME}`],d={type:U.page,data:l,page_id:this.page_id},p=new T(d),b=new L(d);r.innerHTML=await b.getHtml(),i.innerHTML="",p.mount(i)}if(this.widget_id){const i=new Event("loadWidget");await W(i,Number(this.widget_id))}else _.disableWidgetButtons();if(this._sideNavbar.initialize(),G.renderActionHistory(),ye(),await Se(),await X(),new Z,(await this._authService?.getLoginInfo()).isLoggedIn&&(new he,new Ee,this.ctowData)){const i=document.getElementById("loading-text");i.textContent="Converting to Widget...";const r=JSON.parse(window.atob(this.ctowData)),n=new Te(Number(r));await n.init(),console.log("convertData.convertedData",n.convertedData)}}async getHtml(){o.resetWidgetTree(),ee(),te();const e=await this._authService.getLoginInfo(),i=await ie();if(this._tourStatus=e.tourStatus,this._loginStatus=e.isLoggedIn,e&&e.isLoggedIn){let r=function(u,s){let c;return function(...m){clearTimeout(c),c=setTimeout(()=>u.apply(this,m),s)}},n=function(){const s=document.querySelector(".screen-size-overlay");window.innerWidth<768&&!s?l():window.innerWidth>=768&&s&&document.body.removeChild(s)},l=function(){const u=document.createElement("div");u.className="screen-size-overlay";const s=document.createElement("div");s.className="screen-size-popup",s.setAttribute("role","alertdialog"),s.setAttribute("aria-labelledby","screen-size-title"),s.setAttribute("aria-describedby","screen-size-message");const c=document.createElement("div");c.className="warning-icon",c.innerHTML=`
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#dc3545" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
       <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
     </svg>
-  `;const c=document.createElement("h3");c.className="title",c.id="screen-size-title",c.textContent="Small Screen Detected";const m=document.createElement("p");m.className="message",m.id="screen-size-message",m.textContent="This application is designed for larger screens. For the best experience, please use a device with a screen width of at least 768px.";const g=document.createElement("p");g.className="instructions",g.textContent="If you continue, some features may not display correctly on your device. Consider switching to a tablet, laptop, or desktop computer.",a.appendChild(r),a.appendChild(c),a.appendChild(m),a.appendChild(g),d.appendChild(a),document.body.appendChild(d)};window.closeTour=ne,window.createWidgetModalOpen=j,window.toggleElementMenu=D,window.editElementModalOpen=q,window.deleteElement=O,window.closeModal=$,window.createNewElement=K,window.headerFunctions=R,window.uploadAttachment=Y,window.removeMyWidgetFromPublic=w.removeMyWidgetFromPublic;let l="";this._loginStatus&&!this._tourStatus&&(l=`
+  `;const m=document.createElement("h3");m.className="title",m.id="screen-size-title",m.textContent="Small Screen Detected";const h=document.createElement("p");h.className="message",h.id="screen-size-message",h.textContent="This application is designed for larger screens. For the best experience, please use a device with a screen width of at least 768px.";const v=document.createElement("p");v.className="instructions",v.textContent="If you continue, some features may not display correctly on your device. Consider switching to a tablet, laptop, or desktop computer.",s.appendChild(c),s.appendChild(m),s.appendChild(h),s.appendChild(v),u.appendChild(s),document.body.appendChild(u)};window.closeTour=Ce,window.createWidgetModalOpen=ae,window.toggleElementMenu=se,window.editElementModalOpen=oe,window.deleteElement=ne,window.closeModal=re,window.createNewElement=le,window.headerFunctions=de,window.uploadAttachment=ce,window.removeMyWidgetFromPublic=_.removeMyWidgetFromPublic;let d="";this._loginStatus&&!this._tourStatus&&(d=`
             <div class="row" id="tour-container">
                 <div class="col-md-8 mx-auto">
                 <p class="tour-toast">
@@ -102,10 +124,10 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
       font-size: 12px;
     }
   }
-`,document.head.appendChild(p);const u=n(o,200);window.addEventListener("resize",u),window.addEventListener("load",o);const f=await this._sideNavbar.getHtml(),x=await new v().getHtml(),k=await new b().getHtml();return new Q().init(),`
-      <header class="top-header">
-        <div class="header-section">
-          <router-link href="/" class="logo">${t}<sup>BETA</sup></router-link>
+`,document.head.appendChild(p);const b=r(n,200);window.addEventListener("resize",b),window.addEventListener("load",n);const y=await this._sideNavbar.getHtml(),x=await new T().getHtml(),w=await new L().getHtml();return new pe().init(),`
+      <header class="wico_top-header">
+        <div class="wico_header-section">
+          <router-link href="/" class="logo">${i}<sup>BETA</sup></router-link>
           <button onclick="newWidget(event)" class="button-rounded" >
             <span class="material-symbols-outlined">
             add_circle
@@ -113,7 +135,7 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
             Create New Widget
           </button>
         </div>
-        <div class="header-section header-mid-section">
+        <div class="wico_header-section header-mid-section">
         <button type="button" class="button-rounded selected" id="designSplitViewButton" title="Ctrl + Alt + d">
           <span class="material-symbols-outlined">design_services</span>
           Design
@@ -123,7 +145,7 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
           Code
         </button>
         </div>
-        <div class="header-section header-bottom-section"
+        <div class="wico_header-section header-bottom-section"
           </button> 
           <a href="/subscription" class="upgrade-button">Upgrade Plan</a>
           <button class="button-circle" title="Download" id="download-wdgt-btn" onclick="downloadWebsite(event)">
@@ -137,19 +159,19 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
             </span>
           </button> -->
           <div id="login-info">
-            ${i.loginInfoHTML}
+            ${e.loginInfoHTML}
           </div>
         </div>
       </header>
       <main class="app_builder" id="app_builder">
         <div class="container-fluid">
-            ${l}
+            ${d}
           <div class="row">
 
             <!-- LEFT Content floating -->
             <!-- <div class="col-md-3 d-flex flex-column gap-5 position-absolute" id="column-left"> -->
             <div class="w-auto d-flex px-0 flex-column gap-5 position-absolute" id="column-left">
-              ${f}
+              ${y}
             </div>
 
           <!-- MID Content -->
@@ -162,7 +184,7 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
                 <span class="material-symbols-outlined">start</span>
               </button>
               <div class="right-aside" id="right-aside">
-                ${k}
+                ${w}
               </div>
           </div>
         </div>
@@ -171,8 +193,8 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
         </main>
       <footer>
       </footer>
-    `}else{const o=await new Z(t).getHtml();return setTimeout(async()=>{const s=document.getElementById("widgetGeneratorWidgetContainer");s&&await ee(G.ai_widget,s)},0),`
-    ${o}
+    `}else{const n=await new ve(i).getHtml();return setTimeout(async()=>{const l=document.getElementById("widgetGeneratorWidgetContainer");l&&await we(ge.ai_widget,l)},0),`
+    ${n}
     <!-- Hero Section -->
     <section class="bg-dark text-white position-relative overflow-hidden min-vh-100 w-100 d-flex justify-content-center align-items-center">
         <div class="container py-5">
@@ -414,7 +436,7 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold mb-4">Frequently Asked Questions</h2>
-                <p class="lead text-muted">Everything you need to know about ${t}</p>
+                <p class="lead text-muted">Everything you need to know about ${i}</p>
             </div>
 
             <div class="accordion" id="faqAccordion">
@@ -422,12 +444,12 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
                 <div class="accordion-item border-0 mb-3">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            What is ${t}?
+                            What is ${i}?
                         </button>
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            ${t} is a powerful drag-and-drop platform that allows you to create, customize, and share web components (widgets) without writing complex code. It features real-time preview, code editors, and a community marketplace.
+                            ${i} is a powerful drag-and-drop platform that allows you to create, customize, and share web components (widgets) without writing complex code. It features real-time preview, code editors, and a community marketplace.
                         </div>
                     </div>
                 </div>
@@ -481,7 +503,7 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
             <div class="row g-4">
                 <!-- Company Info -->
                 <div class="col-lg-4">
-                    <h3 class="h5 mb-4 text-white">${t}</h3>
+                    <h3 class="h5 mb-4 text-white">${i}</h3>
                     <p class="text-white-50 mb-4">Create, customize, and share widgets visually. Built for everyone, by developers.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="text-white-50 hover-text-white">
@@ -535,7 +557,7 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
             <div class="border-top border-secondary mt-4 pt-4">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
-                        <p class="text-white-50 mb-0">© 2025 ${t}. All rights reserved.</p>
+                        <p class="text-white-50 mb-0">© 2025 ${i}. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="d-flex justify-content-center justify-content-md-end gap-3">
@@ -548,4 +570,4 @@ import{m as C}from"./mainView.class-C4NLGCWW.js";import{c as S,t as h,s as E,S a
             </div>
         </div>
     </footer>
-`}}}export{Ce as default};
+`}}}export{$e as default};
