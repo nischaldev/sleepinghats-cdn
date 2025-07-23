@@ -1,10 +1,10 @@
-import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l as W,S as o,a as V,b as O,w as _,d as $,e as K,f as R,P as Y,_ as J,n as Q,C as U,g as T,h as L,i as G,j as X,T as Z,r as ee,k as te,m as ie,o as ae,p as se,q as oe,u as ne,x as re,y as le,z as de,A as ce,B as pe}from"./modal.service-DbUkvMQE.js";import{A as me,C as ue,e as ge}from"./index-DJv-2hvE.js";import{A as he,N as ve}from"./navbar.component-BtcAJqHN.js";import{f as be,y as we}from"./mftsccs-browser-DeTC_MD3.js";import"./vendor-Cs_0E_Xj.js";import"./codemirror-B3vgQINq.js";import"./eslint4b-BLWGvIOa.js";import"./prettier-ClL2wQep.js";import"./ckeditor-Cw9bcqxY.js";import"./loginModal.service-BnvDUbe3.js";function ye(){document.addEventListener("keydown",function(i){i.ctrlKey&&i.altKey&&i.key==="d"?(i.preventDefault(),fe()):i.ctrlKey&&i.altKey&&i.key==="c"?(i.preventDefault(),xe()):i.ctrlKey&&i.altKey&&i.key==="r"?(i.preventDefault(),_e()):i.ctrlKey&&i.altKey&&i.key==="f"&&(i.preventDefault(),ke())})}function fe(){const i=document.getElementById("designSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});i&&i.dispatchEvent(e)}function xe(){const i=document.querySelector(".codeSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});i&&i.dispatchEvent(e)}async function _e(){await N.synchronizeWidget("Widget Synchronized")}async function ke(){if(document.getElementById("codeBlocksContainer")?.classList.contains("visible")){const e=document.getElementById("widgetButtionCodeViewWrapper"),t="fullscreen";e?.classList.contains(t)?e?.classList.remove(t):e?.classList.add(t)}}function Ce(){const i=document.getElementById("tour-container");i&&i.remove()}async function Se(){window.addEventListener("online",()=>M()),window.addEventListener("offline",()=>M())}const M=()=>{navigator.onLine?E.infoMessageToast("Internet is back. You are online now.",3):(j(),E.infoMessageToast("You are offline - changes will be saved locally.",3))};class Ee{constructor(){this.init()}init(){document.getElementById("wico_btn-toggle-rightPanel")?.addEventListener("click",t=>{this.toggleRightPanel(t)})}toggleRightPanel(e){const t=e?.target,r=document.getElementById("right-aside"),n=document.getElementById("column-right"),l=document.getElementById("midContent"),d=t?.querySelector("span");r&&(r?.classList.contains("d-none")?(r?.classList.remove("d-none"),n?.classList.add("col-md-3"),l?.classList.remove("col-md-12"),l?.classList.add("col-md-9"),d.textContent="start",t.title="Hide panel",t.classList.add("btn-togglePanel-close"),t.classList.remove("btn-togglePanel-open")):(r?.classList.add("d-none"),n?.classList.remove("col-md-3"),l?.classList.remove("col-md-9"),l?.classList.add("col-md-12"),d.textContent="keyboard_tab_rtl",t.title="Show panel",t.classList.remove("btn-togglePanel-close"),t.classList.add("btn-togglePanel-open")))}}class Te{convertingId=0;convertedData;constructor(e){this.convertingId=e}async init(){const e=await be(Number(this.convertingId)),t=e?.boomgpt?.data_type;this.convertedData=await new Promise(async r=>{switch(t){case"full_page":const n=e?.boomgpt?.full_text,d=new DOMParser().parseFromString(n,"text/html"),p=d.body,b=await Promise.all(Array.from(p.querySelectorAll("script[src]")).map((a,g)=>({order:g,url:a.src})));Array.from(p.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const y=p.querySelectorAll("script:not([src])");let f="";y.forEach(a=>{f+=a.textContent}),Array.from(p.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const x=Array.from(d.head.querySelectorAll("link[rel='stylesheet'")).map((a,g)=>({order:g,url:a.href})),k=d.head.querySelectorAll("style");let w="";k.forEach(a=>{w+=a.textContent}),o.staticWidgetTree.html=p.innerHTML,o.staticWidgetTree.css=w,o.staticWidgetTree.library.css=x,o.staticWidgetTree.library.js=b,o.staticWidgetTree.before_render="this.render();",o.staticWidgetTree.after_render=f;break;case"all":const C=e?.boomgpt?.visual_text,s=new DOMParser().parseFromString(C,"text/html"),c=s.body,m=await Promise.all(Array.from(c.querySelectorAll("script[src]")).map((a,g)=>({order:g,url:a.src})));Array.from(c.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const h=c.querySelectorAll("script:not([src])");let v="";h.forEach(a=>{v+=a.textContent}),Array.from(c.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const z=Array.from(s.head.querySelectorAll("link[rel='stylesheet'")).map((a,g)=>({order:g,url:a.href})),A=s.head.querySelectorAll("style");let S="";A.forEach(a=>{S+=a.textContent}),o.staticWidgetTree.html=c.innerHTML,o.staticWidgetTree.css=S,o.staticWidgetTree.library.css=z,o.staticWidgetTree.library.js=m,o.staticWidgetTree.before_render="this.render();",o.staticWidgetTree.after_render=v;break;case"plain_text":const I=e?.boomgpt?.visual_text,H=new DOMParser().parseFromString(I,"text/html").body;o.staticWidgetTree.html=H.innerHTML;break;case"only_images":const D=e?.boomgpt?.images?.map(a=>`
+import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as V,t as f,s as j,l as S,S as s,a as z,b as N,w as g,d as O,e as $,f as K,P as R,_ as J,n as Q,C as Y,g as x,h as _,i as G,j as U,T as X,r as Z,k as ee,m as te,o as ie,p as ae,q as se,u as oe,x as ne,y as le,z as re,A as de,B as ce}from"./modal.service-BbHzpjL1.js";import{A as me,C as pe,e as ue}from"./index-C9ZFvrEj.js";import{A as ge,N as ve}from"./navbar.component-BOX6Y7fV.js";import{f as he,y as be}from"./mftsccs-browser-DeTC_MD3.js";import"./vendor-Cs_0E_Xj.js";import"./codemirror-B3vgQINq.js";import"./eslint4b-BLWGvIOa.js";import"./prettier-ClL2wQep.js";import"./ckeditor-Cw9bcqxY.js";import"./loginModal.service-DKZ_IrRa.js";function we(){document.addEventListener("keydown",function(i){i.ctrlKey&&i.altKey&&i.key==="d"?(i.preventDefault(),ye()):i.ctrlKey&&i.altKey&&i.key==="c"?(i.preventDefault(),fe()):i.ctrlKey&&i.altKey&&i.key==="r"?(i.preventDefault(),xe()):i.ctrlKey&&i.altKey&&i.key==="f"&&(i.preventDefault(),_e())})}function ye(){const i=document.getElementById("designSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});i&&i.dispatchEvent(e)}function fe(){const i=document.querySelector(".codeSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});i&&i.dispatchEvent(e)}async function xe(){await V.synchronizeWidget("Widget Synchronized")}async function _e(){if(document.getElementById("codeBlocksContainer")?.classList.contains("visible")){const e=document.getElementById("widgetButtionCodeViewWrapper"),t="fullscreen";e?.classList.contains(t)?e?.classList.remove(t):e?.classList.add(t)}}function ke(){const i=document.getElementById("tour-container");i&&i.remove()}async function Se(){window.addEventListener("online",()=>k()),window.addEventListener("offline",()=>k())}const k=()=>{navigator.onLine?f.infoMessageToast("Internet is back. You are online now.",3):(j(),f.infoMessageToast("You are offline - changes will be saved locally.",3))};class Ce{constructor(){this.init()}init(){document.getElementById("wico_btn-toggle-rightPanel")?.addEventListener("click",t=>{this.toggleRightPanel(t)})}toggleRightPanel(e){const t=e?.target,o=document.getElementById("right-aside"),n=document.getElementById("column-right"),l=document.getElementById("midContent"),r=t?.querySelector("span");o&&(o?.classList.contains("d-none")?(o?.classList.remove("d-none"),n?.classList.add("col-md-3"),l?.classList.remove("col-md-12"),l?.classList.add("col-md-9"),r.textContent="start",t.title="Hide panel",t.classList.add("btn-togglePanel-close"),t.classList.remove("btn-togglePanel-open")):(o?.classList.add("d-none"),n?.classList.remove("col-md-3"),l?.classList.remove("col-md-9"),l?.classList.add("col-md-12"),r.textContent="keyboard_tab_rtl",t.title="Show panel",t.classList.remove("btn-togglePanel-close"),t.classList.add("btn-togglePanel-open")))}}class Te{convertingId=0;convertedData;constructor(e){this.convertingId=e}async init(){const e=await he(Number(this.convertingId)),t=e?.boomgpt?.data_type;this.convertedData=await new Promise(async o=>{switch(t){case"full_page":const n=e?.boomgpt?.full_text,r=new DOMParser().parseFromString(n,"text/html"),d=r.body,m=await Promise.all(Array.from(d.querySelectorAll("script[src]")).map((a,c)=>({order:c,url:a.src})));Array.from(d.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const v=d.querySelectorAll("script:not([src])");let h="";v.forEach(a=>{h+=a.textContent}),Array.from(d.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const C=Array.from(r.head.querySelectorAll("link[rel='stylesheet'")).map((a,c)=>({order:c,url:a.href})),T=r.head.querySelectorAll("style");let b="";T.forEach(a=>{b+=a.textContent}),s.staticWidgetTree.html=d.innerHTML,s.staticWidgetTree.css=b,s.staticWidgetTree.library.css=C,s.staticWidgetTree.library.js=m,s.staticWidgetTree.before_render="this.render();",s.staticWidgetTree.after_render=h;break;case"all":const E=e?.boomgpt?.visual_text,u=new DOMParser().parseFromString(E,"text/html"),p=u.body,M=await Promise.all(Array.from(p.querySelectorAll("script[src]")).map((a,c)=>({order:c,url:a.src})));Array.from(p.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const L=p.querySelectorAll("script:not([src])");let w="";L.forEach(a=>{w+=a.textContent}),Array.from(p.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const W=Array.from(u.head.querySelectorAll("link[rel='stylesheet'")).map((a,c)=>({order:c,url:a.href})),A=u.head.querySelectorAll("style");let y="";A.forEach(a=>{y+=a.textContent}),s.staticWidgetTree.html=p.innerHTML,s.staticWidgetTree.css=y,s.staticWidgetTree.library.css=W,s.staticWidgetTree.library.js=M,s.staticWidgetTree.before_render="this.render();",s.staticWidgetTree.after_render=w;break;case"plain_text":const I=e?.boomgpt?.visual_text,H=new DOMParser().parseFromString(I,"text/html").body;s.staticWidgetTree.html=H.innerHTML;break;case"only_images":const D=e?.boomgpt?.images?.map(a=>`
           <div class="cw_image-card">
             <div class="cw_card cw_image">
               <img src="${a.path}" alt='${a.title}' loading="lazy">
             </div>
           </div>
-          `).join("");o.staticWidgetTree.html=D,o.staticWidgetTree.css=`
+          `).join("");s.staticWidgetTree.html=D,s.staticWidgetTree.css=`
           .cw_image-card {
             display: flex;
             align-items: center;
@@ -20,11 +20,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l a
           .cw_image-card .cw_image img {
            max-width: 100%;
           }
-        `;break;case"sticky_note":const B=e?.boomgpt?.sticky_note,F=new DOMParser().parseFromString(B,"text/html").body;o.staticWidgetTree.html=F.innerHTML;break;case"widget":const P=new Event("loadWidget");await W(P,Number(e?.boomgpt?.widget_id));break}t!=="widget"&&(await V(o.staticWidgetTree),await O(o.staticWidgetTree,!1),_.enableWidgetButtons(),await $()),r("converted")}),console.log("convertedData --->",this.convertedData)}}class $e extends q{the_params;page_id;widget_id;_sideNavbar;_tourStatus=!1;_loginStatus=!1;_pagesTSCCSService;_authService;ctowData;constructor(e){super(e),this._sideNavbar=new K,R.navbar=this._sideNavbar,this.the_params=e,this.ctowData=e?.ctow,this.page_id=e?.["page-id"],this.widget_id=e?.["widget-id"],this._pagesTSCCSService=new Y,this.setTitle("Home | Widget Conceptualizer"),window._dragService=J,this._authService=me.getInstance()}async componentDidMount(){if(this.page_id){const t=document.getElementById("midContent"),r=document.getElementById("right-aside"),n=await this._pagesTSCCSService.getPageById(Number(this.page_id));n?.error&&Q();const l=n.data?.[`the_${ue.PAGE_COMP_NAME}`],d={type:U.page,data:l,page_id:this.page_id},p=new T(d),b=new L(d);r.innerHTML=await b.getHtml(),t.innerHTML="",p.mount(t)}if(this.widget_id){const t=new Event("loadWidget");await W(t,Number(this.widget_id))}else _.disableWidgetButtons();if(this._sideNavbar.initialize(),G.renderActionHistory(),ye(),await Se(),await X(),new Z,(await this._authService?.getLoginInfo()).isLoggedIn&&(new he,new Ee,this.ctowData)){const t=document.getElementById("loading-text");t.textContent="Converting to Widget...";const r=JSON.parse(window.atob(this.ctowData)),n=new Te(Number(r));await n.init(),console.log("convertData.convertedData",n.convertedData)}}async getHtml(){o.resetWidgetTree(),ee(),te();const e=await this._authService.getLoginInfo(),t=await ie();if(this._tourStatus=e.tourStatus,this._loginStatus=e.isLoggedIn,e&&e.isLoggedIn){let r=function(u,s){let c;return function(...m){clearTimeout(c),c=setTimeout(()=>u.apply(this,m),s)}},n=function(){const s=document.querySelector(".screen-size-overlay");window.innerWidth<768&&!s?l():window.innerWidth>=768&&s&&document.body.removeChild(s)},l=function(){const u=document.createElement("div");u.className="screen-size-overlay";const s=document.createElement("div");s.className="screen-size-popup",s.setAttribute("role","alertdialog"),s.setAttribute("aria-labelledby","screen-size-title"),s.setAttribute("aria-describedby","screen-size-message");const c=document.createElement("div");c.className="warning-icon",c.innerHTML=`
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#dc3545" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-    </svg>
-  `;const m=document.createElement("h3");m.className="title",m.id="screen-size-title",m.textContent="Small Screen Detected";const h=document.createElement("p");h.className="message",h.id="screen-size-message",h.textContent="This application is designed for larger screens. For the best experience, please use a device with a screen width of at least 768px.";const v=document.createElement("p");v.className="instructions",v.textContent="If you continue, some features may not display correctly on your device. Consider switching to a tablet, laptop, or desktop computer.",s.appendChild(c),s.appendChild(m),s.appendChild(h),s.appendChild(v),u.appendChild(s),document.body.appendChild(u)};window.closeTour=Ce,window.createWidgetModalOpen=ae,window.toggleElementMenu=se,window.editElementModalOpen=oe,window.deleteElement=ne,window.closeModal=re,window.createNewElement=le,window.headerFunctions=de,window.uploadAttachment=ce,window.removeMyWidgetFromPublic=_.removeMyWidgetFromPublic;let d="";this._loginStatus&&!this._tourStatus&&(d=`
+        `;break;case"sticky_note":const B=e?.boomgpt?.sticky_note,F=new DOMParser().parseFromString(B,"text/html").body;s.staticWidgetTree.html=F.innerHTML;break;case"widget":const P=new Event("loadWidget");await S(P,Number(e?.boomgpt?.widget_id));break}t!=="widget"&&(await z(s.staticWidgetTree),await N(s.staticWidgetTree,!1),g.enableWidgetButtons(),await O()),o("converted")}),console.log("convertedData --->",this.convertedData)}}class $e extends q{the_params;page_id;widget_id;_sideNavbar;_tourStatus=!1;_loginStatus=!1;_pagesTSCCSService;_authService;ctowData;constructor(e){super(e),this._sideNavbar=new $,K.navbar=this._sideNavbar,this.the_params=e,this.ctowData=e?.ctow,this.page_id=e?.["page-id"],this.widget_id=e?.["widget-id"],this._pagesTSCCSService=new R,this.setTitle("Home | Widget Conceptualizer"),window._dragService=J,this._authService=me.getInstance()}async componentDidMount(){if(this.page_id){const t=document.getElementById("midContent"),o=document.getElementById("right-aside"),n=await this._pagesTSCCSService.getPageById(Number(this.page_id));n?.error&&Q();const l=n.data?.[`the_${pe.PAGE_COMP_NAME}`],r={type:Y.page,data:l,page_id:this.page_id},d=new x(r),m=new _(r);o.innerHTML=await m.getHtml(),t.innerHTML="",d.mount(t)}if(this.widget_id){const t=new Event("loadWidget");await S(t,Number(this.widget_id))}else g.disableWidgetButtons();if(this._sideNavbar.initialize(),G.renderActionHistory(),we(),await Se(),await U(),new X,(await this._authService?.getLoginInfo()).isLoggedIn&&(new ge,new Ce,this.ctowData)){const t=document.getElementById("loading-text");t.textContent="Converting to Widget...";const o=JSON.parse(window.atob(this.ctowData)),n=new Te(Number(o));await n.init(),console.log("convertData.convertedData",n.convertedData)}}async getHtml(){s.resetWidgetTree(),Z(),ee();const e=await this._authService.getLoginInfo(),t=await te();if(this._tourStatus=e.tourStatus,this._loginStatus=e.isLoggedIn,e&&e.isLoggedIn){window.closeTour=ke,window.createWidgetModalOpen=ie,window.toggleElementMenu=ae,window.editElementModalOpen=se,window.deleteElement=oe,window.closeModal=ne,window.createNewElement=le,window.headerFunctions=re,window.uploadAttachment=de,window.removeMyWidgetFromPublic=g.removeMyWidgetFromPublic;let o="";this._loginStatus&&!this._tourStatus&&(o=`
             <div class="row" id="tour-container">
                 <div class="col-md-8 mx-auto">
                 <p class="tour-toast">
@@ -34,97 +30,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l a
                 </p>
                 </div>
             </div>
-        `);const p=document.createElement("style");p.textContent=`
-  .screen-size-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom:0 ;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    animation: fadeIn 0.3s ease-out;
-  }
-
-  .screen-size-popup {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    padding: 32px;
-    border-radius: 12px;
-    max-width: 300px;
-    width: 70%;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
-    animation: slideUp 0.4s ease-out;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .screen-size-popup .warning-icon {
-    margin-bottom: 20px;
-    color: #dc3545;
-    transition: transform 0.3s ease;
-  }
-
-  .screen-size-popup .warning-icon:hover {
-    transform: scale(1.1);
-  }
-
-  .screen-size-popup .title {
-    margin: 0 0 16px;
-    color: #1a1a1a;
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  .screen-size-popup .message {
-    margin: 0 0 16px;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .screen-size-popup .instructions {
-    margin: 0;
-    color: #555;
-    font-size: 14px;
-    font-style: italic;
-    line-height: 1.5;
-    opacity: 0.9;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  @media (max-width: 380px) {
-    .screen-size-popup {
-      padding: 24px;
-      max-width: 60%;
-    }
-
-    .screen-size-popup .title {
-      font-size: 15px;
-    }
-
-    .screen-size-popup .message {
-      font-size: 13px;
-    }
-
-    .screen-size-popup .instructions {
-      font-size: 12px;
-    }
-  }
-`,document.head.appendChild(p);const b=r(n,200);window.addEventListener("resize",b),window.addEventListener("load",n);const y=await this._sideNavbar.getHtml(),x=await new T().getHtml(),w=await new L().getHtml();return new pe().init(),`
+        `);const n=await this._sideNavbar.getHtml(),r=await new x().getHtml(),m=await new _().getHtml();return new ce().init(),`
       <header class="wico_top-header">
         <div class="wico_header-section">
           <router-link href="/" class="logo">${t}<sup>BETA</sup></router-link>
@@ -165,18 +71,18 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l a
       </header>
       <main class="app_builder" id="app_builder">
         <div class="container-fluid">
-            ${d}
+            ${o}
           <div class="row">
 
             <!-- LEFT Content floating -->
             <!-- <div class="col-md-3 d-flex flex-column gap-5 position-absolute" id="column-left"> -->
             <div class="w-auto d-flex px-0 flex-column gap-5 position-absolute" id="column-left">
-              ${y}
+              ${n}
             </div>
 
           <!-- MID Content -->
           <div class="col-md-9 midContent mx-auto" id="midContent">
-            ${x}
+            ${r}
           </div>
           <!-- RIGHT Content -->
           <div class="col-md-3 rightContent" id="column-right">
@@ -184,7 +90,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l a
                 <span class="material-symbols-outlined">start</span>
               </button>
               <div class="right-aside" id="right-aside">
-                ${w}
+                ${m}
               </div>
           </div>
         </div>
@@ -193,7 +99,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{c as N,t as E,s as j,l a
         </main>
       <footer>
       </footer>
-    `}else{const n=await new ve(t).getHtml();return setTimeout(async()=>{const l=document.getElementById("widgetGeneratorWidgetContainer");l&&await we(ge.ai_widget,l)},0),`
+    `}else{const n=await new ve(t).getHtml();return setTimeout(async()=>{const l=document.getElementById("widgetGeneratorWidgetContainer");l&&await be(ue.ai_widget,l)},0),`
     ${n}
     <!-- Hero Section -->
     <section class="bg-dark text-white position-relative overflow-hidden min-vh-100 w-100 d-flex justify-content-center align-items-center">
