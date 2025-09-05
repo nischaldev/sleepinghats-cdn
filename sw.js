@@ -1,107 +1,77 @@
-importScripts("/serviceWorker.bundle.js");
+// Open (or create) an IndexedDB database
+function openDB(dbName, storeName) {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(dbName, 1);
 
-// is preview
-if (
-  self.location.hostname.includes("preview-") &&
-  self.location.hostname != "develop.freeschema.com" &&
-  self.location.hostname != "localhost"
-) {
-  (() => {
-    const CACHE_NAME = "pwa-cache-v1.5";
-    const ASSETS = [
-      "/",
-      "/index.html",
-      "/favicon.ico",
-      "/icons/icon-192x192.png",
-      "/icons/icon-512x512.png",
-    ];
-
-    const MAX_AGE = 1 * 24 * 60 * 60 * 1000; // 1 day in milliseconds
-
-    // Install Service Worker & Cache Essential Files
-    self.addEventListener("install", (event) => {
-      event.waitUntil(
-        caches.open(CACHE_NAME)
-        .then(async (cache) => {
-          for (const asset of ASSETS) {
-            try {
-              await cache.add(asset);
-            } catch (error) {
-              console.warn(`Failed to cache: ${asset}`, error);
-            }
-          }
-        }).then(() => {
-          self.skipWaiting(); // Only skip waiting once all assets are cached
-        })
-      );
-      // self.skipWaiting();
-    });
-
-    // Activate & Cleanup Old Caches
-    self.addEventListener("activate", (event) => {
-      event.waitUntil(
-        caches
-          .keys()
-          .then((keys) =>
-            Promise.all(
-              keys.map((key) =>
-                key !== CACHE_NAME ? caches.delete(key) : null
-              )
-            )
-          )
-          .then(() => {
-            self.clients.claim(); // Claim control over the client
-          })
-      );
-      // self.clients.claim();
-    });
-
-    // Fetch Requests with Live Update Fallback
-    self.addEventListener("fetch", (event) => {
-      if (event.request.method !== "GET") return; // Ignore non-GET requests (e.g., POST, PUT, DELETE)
-
-      event.respondWith(
-        // First try to fetch live data
-        fetch(event.request)
-          .then((networkResponse) => {
-            // If successful, update the cache with live data
-            return caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, networkResponse.clone());
-              return networkResponse;
-            });
-          })
-          .catch(() => {
-            // If live data fails (offline or other issues), fallback to cache
-            return caches.match(event.request).then((cachedResponse) => {
-              if (cachedResponse) {
-                return cachedResponse; // Return cached response if available
-              }
-              // If no cached response, return an error response
-              return Response.error();
-            });
-          })
-      );
-    });
-
-    // Notify Clients to Refresh When New SW is Available
-    self.addEventListener("message", (event) => {
-      if (event.data === "skipWaiting") {
-        self.skipWaiting();
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+      if (!db.objectStoreNames.contains(storeName)) {
+        db.createObjectStore(storeName);
       }
-    });
+    };
 
-    // Push Notifications
-    self.addEventListener("push", (event) => {
-      const data = event.data?.json() || {
-        title: "New Notification",
-        body: "You have a new message!",
-      };
-      event.waitUntil(
-        self.registration.showNotification(data.title, {
-          body: data.body,
-          icon: "/icons/icon-192x192.png",
-        })
-      );
-    });
-  })();
+    request.onsuccess = (event) => {
+      resolve(event.target.result);
+    };
+
+    request.onerror = (event) => {
+      reject(event.target.error);
+    };
+  });
 }
+
+// Save data to the store
+function saveToDB(db, storeName, key, value) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, "readwrite");
+    const store = tx.objectStore(storeName);
+    const request = store.put(value, key);
+
+    request.onsuccess = () => resolve(true);
+    request.onerror = (e) => reject(e.target.error);
+  });
+}
+
+// Read data from the store (optional)
+function getFromDB(db, storeName, key) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, "readonly");
+    const store = tx.objectStore(storeName);
+    const request = store.get(key);
+
+    request.onsuccess = (e) => resolve(e.target.result);
+    request.onerror = (e) => reject(e.target.error);
+  });
+}
+
+// serviceworker.js
+self.addEventListener("fetch", (event) => {
+  if (
+    event.request.method === "POST" &&
+    event.request.url.endsWith("/captures")
+  ) {
+    event.respondWith(
+      (async () => {
+        const formData = await event.request.formData();
+
+        const title = formData.get("title");
+        const text = formData.get("text");
+        const url = formData.get("url");
+        const files = formData.getAll("media");
+
+        const sharedData = { title, text, url, files };
+        console.log("sharedData -->", sharedData);
+
+        try {
+          const db = await openDB("MyPwaDB", "SharedStore");
+          await saveToDB(db, "SharedStore", "_bsd", sharedData);
+        } catch (err) {
+          console.error("❌ Error saving to IndexedDB:", err);
+        }
+
+        // Redirect back to confirmation page
+        return Response.redirect("/captures", 303);
+      })()
+    );
+  }
+});
