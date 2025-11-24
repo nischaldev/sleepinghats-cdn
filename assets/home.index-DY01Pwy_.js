@@ -1,10 +1,10 @@
-import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l as S,S as s,b as j,d as z,w as g,e as O,f as $,h as K,P as R,_ as J,A as Q,n as G,C as Y,i as U,j as x,k as _,m as X,o as Z,T as ee,r as te,p as ie,q as ae,u as se,x as oe,y as ne,z as le,B as re,D as de,E as ce,F as me,G as pe,H as ue}from"./index-ycmE3WYp.js";import{A as ge,N as ve}from"./navbar.component-CjlvdyEM.js";import{E as he,N as be}from"./mftsccs-browser-CiS5-ubz.js";import"./vendor-DEYWGvhS.js";import"./codemirror-D1H9tReK.js";import"./eslint4b-BLWGvIOa.js";import"./prettier-ClL2wQep.js";import"./ckeditor-Cw9bcqxY.js";import"./loginModal.service-D_WbtTxV.js";function we(){document.addEventListener("keydown",function(i){i.ctrlKey&&i.altKey&&i.key==="d"?(i.preventDefault(),ye()):i.ctrlKey&&i.altKey&&i.key==="c"?(i.preventDefault(),fe()):i.ctrlKey&&i.altKey&&i.key==="r"?(i.preventDefault(),xe()):i.ctrlKey&&i.altKey&&i.key==="f"&&(i.preventDefault(),_e())})}function ye(){const i=document.getElementById("designSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});i&&i.dispatchEvent(e)}function fe(){const i=document.querySelector(".codeSplitViewButton"),e=new Event("click",{bubbles:!0,cancelable:!0});i&&i.dispatchEvent(e)}async function xe(){await N.synchronizeWidget("Widget Synchronized")}async function _e(){if(document.getElementById("codeBlocksContainer")?.classList.contains("visible")){const e=document.getElementById("widgetButtionCodeViewWrapper"),t="fullscreen";e?.classList.contains(t)?e?.classList.remove(t):e?.classList.add(t)}}function ke(){const i=document.getElementById("tour-container");i&&i.remove()}async function Se(){window.addEventListener("online",()=>k()),window.addEventListener("offline",()=>k())}const k=()=>{navigator.onLine?f.infoMessageToast("Internet is back. You are online now.",3):(V(),f.infoMessageToast("You are offline - changes will be saved locally.",3))};class Ce{constructor(){this.init()}init(){document.getElementById("wico_btn-toggle-rightPanel")?.addEventListener("click",t=>{this.toggleRightPanel(t)})}toggleRightPanel(e){const t=e?.target,o=document.getElementById("right-aside"),n=document.getElementById("column-right"),l=document.getElementById("midContent"),r=t?.querySelector("span");o&&(o?.classList.contains("d-none")?(o?.classList.remove("d-none"),n?.classList.add("col-md-3"),l?.classList.remove("col-md-12"),l?.classList.add("col-md-9"),r.textContent="start",t.title="Hide panel",t.classList.add("btn-togglePanel-close"),t.classList.remove("btn-togglePanel-open")):(o?.classList.add("d-none"),n?.classList.remove("col-md-3"),l?.classList.remove("col-md-9"),l?.classList.add("col-md-12"),r.textContent="keyboard_tab_rtl",t.title="Show panel",t.classList.remove("btn-togglePanel-close"),t.classList.add("btn-togglePanel-open")))}}class Ee{convertingId=0;convertedData;constructor(e){this.convertingId=e}async init(){const e=await he(Number(this.convertingId)),t=e?.boomgpt?.data_type;this.convertedData=await new Promise(async o=>{switch(t){case"full_page":const n=e?.boomgpt?.full_text,r=new DOMParser().parseFromString(n,"text/html"),d=r.body,m=await Promise.all(Array.from(d.querySelectorAll("script[src]")).map((a,c)=>({order:c,url:a.src})));Array.from(d.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const v=d.querySelectorAll("script:not([src])");let h="";v.forEach(a=>{h+=a.textContent}),Array.from(d.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const C=Array.from(r.head.querySelectorAll("link[rel='stylesheet'")).map((a,c)=>({order:c,url:a.href})),E=r.head.querySelectorAll("style");let b="";E.forEach(a=>{b+=a.textContent}),s.staticWidgetTree.html=d.innerHTML,s.staticWidgetTree.css=b,s.staticWidgetTree.library.css=C,s.staticWidgetTree.library.js=m,s.staticWidgetTree.before_render="this.render();",s.staticWidgetTree.after_render=h;break;case"all":const T=e?.boomgpt?.visual_text,u=new DOMParser().parseFromString(T,"text/html"),p=u.body,M=await Promise.all(Array.from(p.querySelectorAll("script[src]")).map((a,c)=>({order:c,url:a.src})));Array.from(p.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const L=p.querySelectorAll("script:not([src])");let w="";L.forEach(a=>{w+=a.textContent}),Array.from(p.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const W=Array.from(u.head.querySelectorAll("link[rel='stylesheet'")).map((a,c)=>({order:c,url:a.href})),A=u.head.querySelectorAll("style");let y="";A.forEach(a=>{y+=a.textContent}),s.staticWidgetTree.html=p.innerHTML,s.staticWidgetTree.css=y,s.staticWidgetTree.library.css=W,s.staticWidgetTree.library.js=M,s.staticWidgetTree.before_render="this.render();",s.staticWidgetTree.after_render=w;break;case"plain_text":const I=e?.boomgpt?.visual_text,H=new DOMParser().parseFromString(I,"text/html").body;s.staticWidgetTree.html=H.innerHTML;break;case"only_images":const D=e?.boomgpt?.images?.map(a=>`
+import{m as j}from"./mainView.class-C4NLGCWW.js";import{a as V,g as z,t as S,s as O,l as M,S as r,b as $,d as K,w as f,e as Q,f as R,h as J,P as G,_ as Y,A as U,n as X,C as Z,i as ee,j as C,k as E,m as te,o as ie,T as ae,r as se,p as ne,q as oe,u as re,x as le,y as de,z as ce,B as me,D as ue,E as pe,F as ge,G as ve,H as he}from"./index-CBl1yXRx.js";import{A as be,N as we}from"./navbar.component-C4HgsyaJ.js";import{K as T,_ as ye,Q as fe,A as xe,m as _e}from"./mftsccs-browser-CcapBeGk.js";import"./vendor-DEYWGvhS.js";import"./codemirror-D1H9tReK.js";import"./eslint4b-BLWGvIOa.js";import"./prettier-ClL2wQep.js";import"./ckeditor-Cw9bcqxY.js";import"./loginModal.service-Ce2IXWFg.js";function ke(){document.addEventListener("keydown",function(e){e.ctrlKey&&e.altKey&&e.key==="d"?(e.preventDefault(),Se()):e.ctrlKey&&e.altKey&&e.key==="c"?(e.preventDefault(),Ce()):e.ctrlKey&&e.altKey&&e.key==="r"?(e.preventDefault(),Ee()):e.ctrlKey&&e.altKey&&e.key==="f"&&(e.preventDefault(),Te())})}function Se(){const e=document.getElementById("designSplitViewButton"),t=new Event("click",{bubbles:!0,cancelable:!0});e&&e.dispatchEvent(t)}function Ce(){const e=document.querySelector(".codeSplitViewButton"),t=new Event("click",{bubbles:!0,cancelable:!0});e&&e.dispatchEvent(t)}async function Ee(){await V.synchronizeWidget("Widget Synchronized")}async function Te(){if(document.getElementById("codeBlocksContainer")?.classList.contains("visible")){const t=document.getElementById("widgetButtionCodeViewWrapper"),i="fullscreen";t?.classList.contains(i)?t?.classList.remove(i):t?.classList.add(i)}}function Le(){const e=document.getElementById("tour-container");e&&e.remove()}async function Me(){let e=document.getElementById("select-environment-dropdown");if(!e){console.warn("Environment dropdown not found");return}const i=(await z())?.entityId;if(!i){console.warn("Entity ID not found in profile data");return}let s=new T;s.name="environment",s.typeConnection="the_entity_s_environment",s.selectors=["the_environment_name","the_environment_value"];let n=new T;n.name="entity",n.conceptIds=[i],n.freeschemaQueries=[s];let d=await ye(n,""),l=[];for(let o=0;o<d.length;o++){let c=d[o]?.the_entity;if(c){let m=c?.the_entity_s_environment;const u=Array.isArray(m)?m:[m].filter(Boolean);for(let v of u){let h=v?.the_environment;if(h){let y=h?.the_environment_name?.the_name||"Unnamed",p=h?.the_environment_value?.the_environment_value;if(p)try{p=JSON.parse(p)}catch(b){console.error("Error parsing environment values:",b),p=null}let x={name:y,values:p};l.push(x)}}}}for(let o=0;o<l.length;o++){let c=l[o]?.name;const m=document.createElement("option");m.value=o.toString(),m.textContent=c,e.appendChild(m)}e.addEventListener("change",function(){const o=Number(this.value),c=l[o];if(!c||!c.values){console.warn("No environment values found for selected environment");return}const m=c.values;for(const u in m)if(Object.prototype.hasOwnProperty.call(m,u)){const v=m[u];fe.setValue(u,v),console.log(`Set ${u}:`,v)}})}async function We(){window.addEventListener("online",()=>L()),window.addEventListener("offline",()=>L())}const L=()=>{navigator.onLine?S.infoMessageToast("Internet is back. You are online now.",3):(O(),S.infoMessageToast("You are offline - changes will be saved locally.",3))};class Ae{constructor(){this.init()}init(){document.getElementById("wico_btn-toggle-rightPanel")?.addEventListener("click",i=>{this.toggleRightPanel(i)})}toggleRightPanel(t){const i=t?.target,s=document.getElementById("right-aside"),n=document.getElementById("column-right"),d=document.getElementById("midContent"),l=i?.querySelector("span");s&&(s?.classList.contains("d-none")?(s?.classList.remove("d-none"),n?.classList.add("col-md-3"),d?.classList.remove("col-md-12"),d?.classList.add("col-md-9"),l.textContent="start",i.title="Hide panel",i.classList.add("btn-togglePanel-close"),i.classList.remove("btn-togglePanel-open")):(s?.classList.add("d-none"),n?.classList.remove("col-md-3"),d?.classList.remove("col-md-9"),d?.classList.add("col-md-12"),l.textContent="keyboard_tab_rtl",i.title="Show panel",i.classList.remove("btn-togglePanel-close"),i.classList.add("btn-togglePanel-open")))}}class Ie{convertingId=0;convertedData;constructor(t){this.convertingId=t}async init(){const t=await xe(Number(this.convertingId)),i=t?.boomgpt?.data_type;this.convertedData=await new Promise(async s=>{switch(i){case"full_page":const n=t?.boomgpt?.full_text,l=new DOMParser().parseFromString(n,"text/html"),o=l.body,c=await Promise.all(Array.from(o.querySelectorAll("script[src]")).map((a,g)=>({order:g,url:a.src})));Array.from(o.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const m=o.querySelectorAll("script:not([src])");let u="";m.forEach(a=>{u+=a.textContent}),Array.from(o.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const v=Array.from(l.head.querySelectorAll("link[rel='stylesheet'")).map((a,g)=>({order:g,url:a.href})),h=l.head.querySelectorAll("style");let y="";h.forEach(a=>{y+=a.textContent}),r.staticWidgetTree.html=o.innerHTML,r.staticWidgetTree.css=y,r.staticWidgetTree.library.css=v,r.staticWidgetTree.library.js=c,r.staticWidgetTree.before_render="this.render();",r.staticWidgetTree.after_render=u;break;case"all":const p=t?.boomgpt?.visual_text,b=new DOMParser().parseFromString(p,"text/html"),w=b.body,W=await Promise.all(Array.from(w.querySelectorAll("script[src]")).map((a,g)=>({order:g,url:a.src})));Array.from(w.querySelectorAll("script[src]"))?.forEach(a=>{a.remove()});const A=w.querySelectorAll("script:not([src])");let _="";A.forEach(a=>{_+=a.textContent}),Array.from(w.querySelectorAll("script:not([src])"))?.forEach(a=>{a.remove()});const I=Array.from(b.head.querySelectorAll("link[rel='stylesheet'")).map((a,g)=>({order:g,url:a.href})),D=b.head.querySelectorAll("style");let k="";D.forEach(a=>{k+=a.textContent}),r.staticWidgetTree.html=w.innerHTML,r.staticWidgetTree.css=k,r.staticWidgetTree.library.css=I,r.staticWidgetTree.library.js=W,r.staticWidgetTree.before_render="this.render();",r.staticWidgetTree.after_render=_;break;case"plain_text":const H=t?.boomgpt?.visual_text,B=new DOMParser().parseFromString(H,"text/html").body;r.staticWidgetTree.html=B.innerHTML;break;case"only_images":const F=t?.boomgpt?.images?.map(a=>`
           <div class="cw_image-card">
             <div class="cw_card cw_image">
               <img src="${a.path}" alt='${a.title}' loading="lazy">
             </div>
           </div>
-          `).join("");s.staticWidgetTree.html=D,s.staticWidgetTree.css=`
+          `).join("");r.staticWidgetTree.html=F,r.staticWidgetTree.css=`
           .cw_image-card {
             display: flex;
             align-items: center;
@@ -20,7 +20,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
           .cw_image-card .cw_image img {
            max-width: 100%;
           }
-        `;break;case"sticky_note":const B=e?.boomgpt?.sticky_note,F=new DOMParser().parseFromString(B,"text/html").body;s.staticWidgetTree.html=F.innerHTML;break;case"widget":const P=new Event("loadWidget");await S(P,Number(e?.boomgpt?.widget_id));break}t!=="widget"&&(await j(s.staticWidgetTree),await z(s.staticWidgetTree,!1),g.enableWidgetButtons(),await O()),o("converted")}),console.log("convertedData --->",this.convertedData)}}class Oe extends q{the_params;page_id;widget_id;_sideNavbar;_tourStatus=!1;_loginStatus=!1;_pagesTSCCSService;_authService;ctowData;constructor(e){super(e),this._sideNavbar=new $,K.navbar=this._sideNavbar,this.the_params=e,this.ctowData=e?.ctow,this.page_id=e?.["page-id"],this.widget_id=e?.["widget-id"],this._pagesTSCCSService=new R,this.setTitle("Home | Widget Conceptualizer"),window._dragService=J,this._authService=Q.getInstance()}async componentDidMount(){if(this.page_id){const t=document.getElementById("midContent"),o=document.getElementById("right-aside"),n=await this._pagesTSCCSService.getPageById(Number(this.page_id));n?.error&&G();const l=n.data?.[`the_${Y.PAGE_COMP_NAME}`],r={type:U.page,data:l,page_id:this.page_id},d=new x(r),m=new _(r);o.innerHTML=await m.getHtml(),t.innerHTML="",d.mount(t)}if(this.widget_id){const t=new Event("loadWidget");await S(t,Number(this.widget_id))}else g.disableWidgetButtons();if(this._sideNavbar.initialize(),X.renderActionHistory(),we(),await Se(),await Z(),new ee,(await this._authService?.getLoginInfo()).isLoggedIn&&(new ge,new Ce,this.ctowData)){const t=document.getElementById("loading-text");t.textContent="Converting to Widget...";const o=JSON.parse(window.atob(this.ctowData)),n=new Ee(Number(o));await n.init(),console.log("convertData.convertedData",n.convertedData)}}async getHtml(){s.resetWidgetTree(),te(),ie();const e=await this._authService.getLoginInfo(),t=await ae();if(this._tourStatus=e.tourStatus,this._loginStatus=e.isLoggedIn,e&&e.isLoggedIn){window.closeTour=ke,window.createWidgetModalOpen=se,window.toggleElementMenu=oe,window.editElementModalOpen=ne,window.deleteElement=le,window.closeModal=re,window.createNewElement=de,window.headerFunctions=ce,window.uploadAttachment=me,window.removeMyWidgetFromPublic=g.removeMyWidgetFromPublic;let o="";this._loginStatus&&!this._tourStatus&&(o=`
+        `;break;case"sticky_note":const P=t?.boomgpt?.sticky_note,q=new DOMParser().parseFromString(P,"text/html").body;r.staticWidgetTree.html=q.innerHTML;break;case"widget":const N=new Event("loadWidget");await M(N,Number(t?.boomgpt?.widget_id));break}i!=="widget"&&(await $(r.staticWidgetTree),await K(r.staticWidgetTree,!1),f.enableWidgetButtons(),await Q()),s("converted")}),console.log("convertedData --->",this.convertedData)}}class Je extends j{the_params;page_id;widget_id;_sideNavbar;_tourStatus=!1;_loginStatus=!1;_pagesTSCCSService;_authService;ctowData;constructor(t){super(t),this._sideNavbar=new R,J.navbar=this._sideNavbar,this.the_params=t,this.ctowData=t?.ctow,this.page_id=t?.["page-id"],this.widget_id=t?.["widget-id"],this._pagesTSCCSService=new G,this.setTitle("Home | Widget Conceptualizer"),window._dragService=Y,this._authService=U.getInstance()}async componentDidMount(){if(this.page_id){const i=document.getElementById("midContent"),s=document.getElementById("right-aside"),n=await this._pagesTSCCSService.getPageById(Number(this.page_id));n?.error&&X();const d=n.data?.[`the_${Z.PAGE_COMP_NAME}`],l={type:ee.page,data:d,page_id:this.page_id},o=new C(l),c=new E(l);s.innerHTML=await c.getHtml(),i.innerHTML="",o.mount(i)}if(this.widget_id){const i=new Event("loadWidget");await M(i,Number(this.widget_id))}else f.disableWidgetButtons();if(this._sideNavbar.initialize(),te.renderActionHistory(),ke(),await We(),await ie(),Me(),new ae,(await this._authService?.getLoginInfo()).isLoggedIn&&(new be,new Ae,this.ctowData)){const i=document.getElementById("loading-text");i.textContent="Converting to Widget...";const s=JSON.parse(window.atob(this.ctowData)),n=new Ie(Number(s));await n.init(),console.log("convertData.convertedData",n.convertedData)}}async getHtml(){r.resetWidgetTree(),se(),ne();const t=await this._authService.getLoginInfo(),i=await oe();if(this._tourStatus=t.tourStatus,this._loginStatus=t.isLoggedIn,t&&t.isLoggedIn){window.closeTour=Le,window.createWidgetModalOpen=re,window.toggleElementMenu=le,window.editElementModalOpen=de,window.deleteElement=ce,window.closeModal=me,window.createNewElement=ue,window.headerFunctions=pe,window.uploadAttachment=ge,window.removeMyWidgetFromPublic=f.removeMyWidgetFromPublic;let s="";this._loginStatus&&!this._tourStatus&&(s=`
             <div class="row" id="tour-container">
                 <div class="col-md-8 mx-auto">
                 <p class="tour-toast">
@@ -30,10 +30,10 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
                 </p>
                 </div>
             </div>
-        `);const n=await this._sideNavbar.getHtml(),r=await new x().getHtml(),m=await new _().getHtml();return new pe().init(),`
+        `);const n=await this._sideNavbar.getHtml(),l=await new C().getHtml(),c=await new E().getHtml();return new ve().init(),`
       <header class="wico_top-header">
         <div class="wico_header-section">
-          <router-link href="/" class="logo">${t}<sup>BETA</sup></router-link>
+          <router-link href="/" class="logo">${i}<sup>BETA</sup></router-link>
           <button onclick="newWidget(event)" class="button-rounded" >
             <span class="material-symbols-outlined">
             add_circle
@@ -65,13 +65,13 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
             </span>
           </button> -->
           <div id="login-info">
-            ${e.loginInfoHTML}
+            ${t.loginInfoHTML}
           </div>
         </div>
       </header>
       <main class="app_builder" id="app_builder">
         <div class="container-fluid">
-            ${o}
+            ${s}
           <div class="row">
 
             <!-- LEFT Content floating -->
@@ -82,7 +82,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
 
           <!-- MID Content -->
           <div class="col-md-9 midContent mx-auto" id="midContent">
-            ${r}
+            ${l}
           </div>
           <!-- RIGHT Content -->
           <div class="col-md-3 rightContent" id="column-right">
@@ -90,7 +90,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
                 <span class="material-symbols-outlined">start</span>
               </button>
               <div class="right-aside" id="right-aside">
-                ${m}
+                ${c}
               </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
         </main>
       <footer>
       </footer>
-    `}else{const n=await new ve(t).getHtml();return setTimeout(async()=>{const l=document.getElementById("widgetGeneratorWidgetContainer");l&&await be(ue.ai_widget,l)},0),`
+    `}else{const n=await new we(i).getHtml();return setTimeout(async()=>{const d=document.getElementById("widgetGeneratorWidgetContainer");d&&await _e(he.ai_widget,d)},0),`
     ${n}
     <!-- Hero Section -->
     <section class="bg-dark text-white position-relative overflow-hidden min-vh-100 w-100 d-flex justify-content-center align-items-center">
@@ -342,7 +342,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold mb-4">Frequently Asked Questions</h2>
-                <p class="lead text-muted">Everything you need to know about ${t}</p>
+                <p class="lead text-muted">Everything you need to know about ${i}</p>
             </div>
 
             <div class="accordion" id="faqAccordion">
@@ -350,12 +350,12 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
                 <div class="accordion-item border-0 mb-3">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            What is ${t}?
+                            What is ${i}?
                         </button>
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            ${t} is a powerful drag-and-drop platform that allows you to create, customize, and share web components (widgets) without writing complex code. It features real-time preview, code editors, and a community marketplace.
+                            ${i} is a powerful drag-and-drop platform that allows you to create, customize, and share web components (widgets) without writing complex code. It features real-time preview, code editors, and a community marketplace.
                         </div>
                     </div>
                 </div>
@@ -409,7 +409,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
             <div class="row g-4">
                 <!-- Company Info -->
                 <div class="col-lg-4">
-                    <h3 class="h5 mb-4 text-white">${t}</h3>
+                    <h3 class="h5 mb-4 text-white">${i}</h3>
                     <p class="text-white-50 mb-4">Create, customize, and share widgets visually. Built for everyone, by developers.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="text-white-50 hover-text-white">
@@ -463,7 +463,7 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
             <div class="border-top border-secondary mt-4 pt-4">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
-                        <p class="text-white-50 mb-0">© 2025 ${t}. All rights reserved.</p>
+                        <p class="text-white-50 mb-0">© 2025 ${i}. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="d-flex justify-content-center justify-content-md-end gap-3">
@@ -476,4 +476,4 @@ import{m as q}from"./mainView.class-C4NLGCWW.js";import{a as N,t as f,s as V,l a
             </div>
         </div>
     </footer>
-`}}}export{Oe as default};
+`}}}export{Je as default};
