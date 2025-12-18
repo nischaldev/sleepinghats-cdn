@@ -1,4 +1,4 @@
-import{y as I,C as M}from"./mftsccs-browser-C1xwC_1-.js";import{D as g,M as y,I as b,O as w,A as h}from"./index-Bl6yb6nn.js";class S{constructor(){this.init()}init(){const s=this.getHtml();document.querySelector("body #app")?.insertAdjacentHTML("afterend",s)}getHtml(){return`
+import{y as I,C as M}from"./mftsccs-browser-C1xwC_1-.js";import{D as g,M as y,I as b,O as w,A as h}from"./index-zj3wtsoV.js";class S{constructor(){this.init()}init(){const s=this.getHtml();document.querySelector("body #app")?.insertAdjacentHTML("afterend",s)}getHtml(){return`
     <dialog id="login-dialog" class="login-modal">
       <div class="login-container">
         <button class="close-button" type="button">
